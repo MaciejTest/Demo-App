@@ -1,0 +1,23 @@
+<p-table [columns]="cols" [value]="users" dataKey="id">
+  <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+        </th>
+        <th>Akcja</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user let-rowIndex="rowIndex" let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+            {{user[col.field]}}
+        </td>
+        <td style="text-align: center;">
+          <button  pButton type="button" pTooltip="Edytuj użytkownika"   (click)="usersService.emit('editUser', user)" icon="fa fa-pencil"></button>
+          <button  pButton type="button" pTooltip="Usuń użytkownika"  tooltipPosition="top"  class="ui-button-danger"  (click)="confirmDeleteUser(rowIndex)" icon="fa fa-trash" ></button>
+          <button  pButton type="button" pTooltip="Generuj PDF"  tooltipPosition="bottom"  class="ui-button-warning" icon="fa fa-file-pdf-o" (click)="usersService.emit('exportToPDF', user)" ></button>
+          <button  pButton type="button" pTooltip="Wyślij hasło emailem"  tooltipPosition="bottom"  class="ui-button-success" icon="fa fa-envelope" (click)="usersService.emit('sendEmail', user)" ></button>
+        </td>
+      </tr>
+  </ng-template>
+</p-table>

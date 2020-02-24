@@ -1,0 +1,6 @@
+<div *ngIf="authenticationService.currentUserValue.role == 'admin'">
+    <app-user-list></app-user-list>
+</div>
+<div *ngIf="authenticationService.currentUserValue.role == 'user'">
+    <app-user-view></app-user-view>
+</div>

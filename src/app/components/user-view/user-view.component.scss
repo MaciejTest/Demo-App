@@ -1,0 +1,32 @@
+.user-panel{
+    margin-bottom: 200px;
+    .contener{
+        width: 750px;
+        margin: 0 auto;
+        p {
+            font-size: 2em;
+            span{
+                width: 300px;
+                font-weight: bold;
+                display: inline-block;
+            }
+        }
+    }
+    .contener-weather{
+        p {
+            font-size: 1em;
+            margin-bottom:5px;
+            span{
+                width: 300px;
+                font-weight: bold;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+p-footer{
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-end;
+}

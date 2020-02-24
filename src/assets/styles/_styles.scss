@@ -1,0 +1,165 @@
+$body-bg: #f1f1f1;
+$body-color: #111;
+$mainFont: Arial, Helvetica, sans-serif;
+$theme-colors: (
+  'primary': #216dad
+);
+$theme-colors: (
+  'accent': #669ecd
+);
+
+@mixin absolute-center() {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+// MATERIAL ICONS
+@import url(//fonts.googleapis.com/icon?family=Material+Icons);
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/material/MaterialIcons-Regular.eot'); /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url('../assets/fonts/material/MaterialIcons-Regular.woff2') format('woff2'),
+        url('../assets/fonts/material/MaterialIcons-Regular.woff') format('woff'),
+        url('../assets/fonts/material/MaterialIcons-Regular.ttf') format('truetype'),
+        url('../assets/fonts/material/MaterialIcons-Regular.svg#materialregular') format('svg');
+}
+
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import '~primeng/resources/primeng.min.css';
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
+@import "~primeflex/primeflex.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+* {
+  font-family: $mainFont;
+}
+
+body, html{
+  margin:0;
+  padding:0;
+}
+
+.layout-wrapper{
+  background: #58B9E8;
+  height: 100vh;
+  &.loged{
+    background: transparent;
+  }
+}
+
+.panel {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  height: 100%;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  .title {
+    background-color: #86afd0;
+    color: #ffffff;
+    text-align: center;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .body {
+    display: flex;
+  }
+}
+
+button {
+  margin-right: .5em;
+}
+
+body .ui-table .ui-table-tbody > tr > td {
+  background-color: inherit;
+  border: 1px solid #c8c8c8;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ui-calendar{
+  width:100%;
+  .ui-inputtext{
+    width:100%;
+  }
+}
+
+.ui-dropdown {
+  min-width: auto;
+}
+
+.ui-dropdown-items-wrapper{
+  max-height: 400px !important;
+}
+
+.deviceList .ui-table .ui-table-thead > tr > th {
+  padding: 0
+}
+
+body .ui-tieredmenu .ui-menuitem {
+  margin: 0;
+  padding: 0;
+}
+
+body .ui-tieredmenu .ui-menu-separator {
+  border: 1px solid #c8c8c8;
+  border-width: 1px 0 0 0;
+  padding: 0;
+}
+
+.ui-button.orange-button {
+  background-color: orange;
+}
+
+
+.ui-button.black-button {
+    background-color: #343a40;
+    border-color: #343a40;
+
+    &:enabled:hover{
+      background-color: #23272b;
+      border-color: #1d2124;
+    }
+
+    &:enabled:focus{
+      -webkit-box-shadow: 0 0 0 0.2em rgba(82,88,93,.5);
+      -moz-box-shadow: 0 0 0 0.2em rgba(82,88,93,.5);
+      box-shadow: 0 0 0 0.2em rgba(82,88,93,.5);
+    }
+}
+
+.ui-button.yellow-button {
+  background-color: #ecf100;
+  border-color: #ecf100;
+  color: black;
+
+  &:enabled:hover{
+    background-color: #ecf100;
+    border-color: #ecf100;
+  }
+
+  &:enabled:focus{
+    -webkit-box-shadow: 0 0 0 0.2em rgba(224, 228, 18, 0.5);
+    -moz-box-shadow: 0 0 0 0.2em rgba(224, 228, 18, 0.5);
+    box-shadow: 0 0 0 0.2em rgba(224, 228, 18, 0.5);
+  }
+}
+
+.invalid-feedback{
+  text-align: right;
+  color: red;
+}
+
+.ui-calendar .ui-inputtext {
+  width: 70% !important;
+}

@@ -1,0 +1,32 @@
+.login-panel{
+    top: 240px;
+    position: relative;
+
+    .login-container{
+        height:100%;
+
+        .panel-size {
+          width:360px;
+        }
+
+        .login-button{
+          margin-right: 0 !important;
+          margin-top: 10px;
+        }
+
+        input{
+          width:100%;
+        }
+
+        .ui-inputgroup{
+          margin-top: 5px;
+         }
+      }
+}
+
+
+
+
+
+
+

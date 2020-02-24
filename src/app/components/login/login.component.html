@@ -1,0 +1,36 @@
+<div class="login-panel">
+    <div class="p-grid p-nogutter p-justify-center p-align-center login-container">
+        <div class="panel-size">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <p-panel header="Logowanie">
+                    <div class="p-grid p-justify-center p-align-center">
+                        <div class="p-col-12">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="fa fa-envelope"></i></span>
+                                <input [ngClass]="{ 'is-invalid': submitted && form.email.errors }" id="input-email" type="text" size="30" pInputText formControlName="email"  placeholder="Wprowadź email">
+                            </div>
+                            <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+                                <small *ngIf="form.email.errors.required">Email jest wymagany</small>
+                            </div>
+                        </div>
+                        <div class="p-col-12">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                                <input [ngClass]="{ 'is-invalid': submitted && form.password.errors }" id="input-password" type="password" size="30" pInputText formControlName="password"
+                                placeholder="Wprowadź hasło">
+                            </div>
+                            <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+                                <small *ngIf="form.password.errors.required">Hasło jest wymagane</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-grid">
+                        <div class="p-col-12">
+                            <button pButton type="submit" label="Zaloguj" class="login-button ui-button-raised pull-right"></button>
+                        </div>
+                    </div>
+                </p-panel>
+            </form>
+        </div>
+    </div>
+</div>

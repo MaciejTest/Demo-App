@@ -1,0 +1,22 @@
+<div class="layout-wrapper" [ngClass]="{'loged':  this.authenticationService.currentUserValue != undefined}">
+  <div class="layout-topbar"  *ngIf="this.authenticationService.currentUserValue">
+      <div class="pull-left" >
+          <button pTooltip="Wyloguj"  class="black-button menu"  tooltipPosition="bottom"  pButton type="button"  icon="fa fa-sign-out"  (click)="logout()" ></button>
+          <div *ngIf="this.authenticationService.currentUserValue.role=='admin'" class="inline">
+              <button pTooltip="Dodaj użytkownika"  tooltipPosition="bottom"  pButton type="button"  icon="fa fa-plus"  (click)="usersService.emit('createUser')" ></button>
+          </div>
+      </div>
+      <a class="logo pull-right" href="/"><span class="header"><span>DEMO</span>APP</span></a>
+  </div>
+  <div class="layout-content">
+      <router-outlet></router-outlet>
+      <p-confirmDialog #cd icon="pi pi-exclamation-triangle">
+              <p-footer>
+                  <button type="button" pButton icon="pi pi-times" label="Nie" (click)="cd.reject()"></button>
+                  <button type="button" pButton icon="pi pi-check" label="Tak" (click)="cd.accept()"></button>
+              </p-footer>
+      </p-confirmDialog>
+      <app-edit-form [userData]="userData" *ngIf="userData"></app-edit-form>
+      <p-toast [style]="{marginTop: '80px'}" ></p-toast>
+  </div>
+</div>

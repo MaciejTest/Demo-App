@@ -1,0 +1,100 @@
+<form [formGroup]="editForm"  (ngSubmit)="onSubmit()" >
+  <p-dialog header="{{formTitle()}}" *ngIf="displayForm && userData" (visibleChange)="cancel()" [(visible)]="displayForm" [style]="{width: '50vw'}" [baseZIndex]="10000">
+      <div class="ui-g">
+            <div class="ui-g-11">
+                <span class="ui-float-label">
+                    <input formControlName="id" class="inputLic" type="hidden"  id="input-id"  pInputText  />
+                    <input formControlName="firstName" class="inputLic" type="text" [ngClass]="{ 'is-invalid': submitted && form.firstName.errors }" id="input-firstName"  pInputText  />
+                    <label for="float-input">Imię</label>
+                </span>
+                <div *ngIf="submitted && form.firstName.errors" class="invalid-feedback">
+                  <small *ngIf="form.firstName.errors.required">Imię jest wymagane</small>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-11">
+                <span class="ui-float-label">
+                    <input formControlName="lastName" class="inputLic" type="text" pInputText  [ngClass]="{ 'is-invalid': submitted && form.lastName.errors }" id="input-lastName" />
+                    <label for="float-input">Nazwisko</label>
+                </span>
+                <div *ngIf="submitted && form.lastName.errors" class="invalid-feedback">
+                  <small *ngIf="form.lastName.errors.required">Nazwisko jest wymagane</small>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g ">
+            <div class="ui-g-11">
+              <span class="ui-float-label">
+                  <input formControlName="email" class="inputLic" type="text" pInputText [ngClass]="{ 'is-invalid': submitted && form.email.errors }" id="input-email"  />
+                  <label for="float-input">E-mail</label>
+              </span>
+              <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+                <small *ngIf="form.email.errors.required">E-mail jest wymagane</small>
+                <small *ngIf="form.email.errors.email">E-mail jest nie jest poprawny</small>
+              </div>
+            </div>
+        </div>
+        <div class="ui-g ">
+          <div class="ui-g-11">
+            <span class="ui-float-label">
+                <input formControlName="city" class="inputLic" type="text" pInputText [ngClass]="{ 'is-invalid': submitted && form.city.errors }" id="input-city"  />
+                <label for="float-input">Miasto</label>
+            </span>
+            <div *ngIf="submitted && form.city.errors" class="invalid-feedback">
+              <small *ngIf="form.city.errors.required">Miasto jest wymagane</small>
+            </div>
+          </div>
+        </div>
+        <div class="ui-g ">
+          <div class="ui-g-11">
+            <span class="ui-float-label">
+                <input formControlName="country" class="inputLic" type="text" pInputText [ngClass]="{ 'is-invalid': submitted && form.country.errors }"  id="input-country"  />
+                <label for="float-input">Kraj</label>
+            </span>
+            <div *ngIf="submitted && form.country.errors" class="invalid-feedback">
+              <small *ngIf="form.country.errors.required">Kraj jest wymagane</small>
+            </div>
+          </div>
+        </div>
+        <div class="ui-g ">
+          <div class="ui-g-11">
+              <span class="ui-float-label">
+                  <p-dropdown formControlName="role" [style]="{'width':'100%'}" [autoDisplayFirst]="false" [options]="typeAccounts" [ngClass]="{ 'is-invalid': submitted && form.role.errors }" id="input-role"   ></p-dropdown>
+                  <label for="float-input">Rola użytkownika</label>
+              </span>
+              <div *ngIf="submitted && form.role.errors" class="invalid-feedback">
+                <small *ngIf="form.role.errors.required">Rola jest wymagana</small>
+              </div>
+          </div>
+        </div>
+        <div class="ui-g ">
+          <div class="ui-g-11">
+            <span class="ui-float-label">
+                <input formControlName="password" class="inputLic" type="text" id="input-password"  pInputText [ngClass]="{ 'is-invalid': submitted && form.password.errors }"  />
+                <label for="float-input">Hasło</label>
+            </span>
+            <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+              <small *ngIf="form.password.errors.required">Hasło jest wymagane</small>
+            </div>
+          </div>
+          <div class="ui-g-1">
+              <button pTooltip="Generuj hasło"  tooltipPosition="bottom" class="password-gen" pButton type="button"  icon="fa fa-key"  (click)="getPassword()"  ></button>
+          </div>
+        </div>
+        <div class="ui-g ">
+          <div class="ui-g-11">
+            <span class="ui-float-label">
+                <input formControlName="passwordRepeat" class="inputLic" type="text" pInputText [ngClass]="{ 'is-invalid': submitted && form.passwordRepeat.errors }"  id="input-passwordRepeat"  />
+                <label for="float-input">Powtórz hasło</label>
+            </span>
+            <div *ngIf="submitted && form.passwordRepeat.errors" class="invalid-feedback">
+              <small *ngIf="form.passwordRepeat.errors.required">Powtórzenie hasła jest wymagane</small>
+            </div>
+          </div>
+        </div>
+        <p-footer>
+          <button type="submit" pButton icon="pi pi-check" label="Zapisz"></button>
+        </p-footer>
+  </p-dialog>
+</form>
