@@ -24,7 +24,7 @@ app.post("/sendMail", (req, res) => {
 app.post("/saveUsers", (req, res) => { // tylko development
   let users = req.body;
   let dataUser = {"users": users}
-  fs.writeFile(" ./../../src/assets/users.json", JSON.stringify(dataUser), function(error) {
+  fs.writeFile(" ./../src/assets/users.json", JSON.stringify(dataUser), function(error) {
       if (error) {
         console.log('error', error);
         res.status(200).json({'status':'error', 'error':'error'});
