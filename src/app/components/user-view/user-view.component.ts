@@ -66,12 +66,12 @@ export class UserViewComponent implements OnInit {
     });
   }
 
-  // changeWeather() {
+  // changeWeather() { // opcja dla historii z przedziałem ale płatna w API openWeatherMap
   //   let beginRange = moment(this.weatherTime[0]).valueOf();
   //   let endRange =  moment(this.weatherTime[1]).valueOf();
   //   if (beginRange && endRange) {
   //     this.weatherService.getWeatherHistorical(this.user.city, this.user.country, beginRange, endRange).subscribe(data => {
-  //       console.log('WeatherHistorical', data); // tylko opcja płatna
+  //       console.log('WeatherHistorical', data);
   //     }, (error) => {
   //       console.log('error', error);
   //       this.user.humidity = 'Brak danych';

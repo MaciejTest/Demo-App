@@ -8,13 +8,14 @@ Uruchom npm i w głównym katalogu i w katalogu servera;
 
 ## Uruchomienie servera
 
-Uruchom npm run server
+Uruchom npm run server w głownym katalogu
 
 ## Uruchomienie wersji developerskiej aplikacji
 
-Uruchom npm start
+Uruchom npm start w głownym katalogu
 
 ## Domyślne dane do logowania
 
 Konto użytwkonika l: user@demo.pl h: demo
+
 Konto admina l: admin@demo.pl h: root
