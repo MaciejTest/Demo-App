@@ -4,7 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Instalacja
 
-Zainstaluj npm install http-server -g w celu uruchomienia lokalnie wersji produkcyjnej
 Uruchom npm i w głównym katalogu i w katalogu servera;
 
 ## Uruchomienie servera
