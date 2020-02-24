@@ -8,11 +8,11 @@ Uruchom npm i w głównym katalogu i w katalogu servera;
 
 ## Uruchomienie servera
 
-Uruchom npm run server w głownym katalogu
+Uruchom npm run server w głównym katalogu
 
 ## Uruchomienie wersji developerskiej aplikacji
 
-Uruchom npm start w głownym katalogu
+Uruchom npm start w głównym katalogu
 
 ## Domyślne dane do logowania
 
